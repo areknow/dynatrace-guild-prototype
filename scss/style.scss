@@ -483,6 +483,9 @@ header {
     .col {
       padding: 0 8%;//percentage
     }
+    .col40 {
+      padding: 0;
+    }
     .title {
       font-weight: bold;
       display: inline-block;
@@ -538,33 +541,34 @@ header {
       list-style: none;
       margin: 0;
       li {
-        cursor: pointer;
-        margin-bottom: 20px;
-        
-        .face {
-          height: 60px;
-          width: 60px;
-          border-radius: 100%;
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-        }
-        .desc {
-            margin-left: 10px;
-          .name {
-            font-size: 20px;
-            font-weight: 600;
-            transition: all .1s ease;
+        .wrapper {
+          display: inline-block;
+          cursor: pointer;
+          margin-bottom: 20px;
+          .face {
+            height: 60px;
+            width: 60px;
+            border-radius: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
           }
-        }
-        &:hover {
-          .name {
-            color: $dynablue;
+          .desc {
+            margin-left: 10px;
+            .name {
+              font-size: 20px;
+              font-weight: 600;
+              transition: all .1s ease;
+            }
+          }
+          &:hover {
+            .name {
+              color: $dynablue;
+            }
           }
         }
       }
       .leader {
-        display: inline-block;
         .face {
           height: 80px;
           width: 80px;
@@ -582,6 +586,23 @@ header {
       }
     }
     .news-section {
+      .scroll-wrap {
+        position: relative;
+        .shadow {
+          height: 20px;
+          width: 100%;
+          position: absolute;
+        }
+        .shadow-top {
+          top: 0;
+          background-image: linear-gradient( 0deg, rgba(255, 255, 255, 0), white );
+          display: none;
+        }
+        .shadow-bottom {
+          bottom: 0;
+          background-image: linear-gradient( 0deg, white, rgba(255, 255, 255, 0) );
+        }
+      }
       .news {
         height: 400px;
         list-style: none;
@@ -607,20 +628,12 @@ header {
           .body {
             padding: 10px 20px;
           }
+          &:last-child {
+            margin-bottom: 5px;
+          }
         }
       }
-      .shadow-top {
-        height: 20px;
-        position: absolute;
-        background-image: linear-gradient( 0deg, rgba(255, 255, 255, 0), white );
-        display: none;
-      }
-      .shadow-bottom {
-        height: 20px;
-        position: absolute;
-        background-image: linear-gradient( 0deg, white, rgba(255, 255, 255, 0) );
-        display: none;
-      }
+      
     }
     .cal-section {
       padding-right: 100px;
@@ -681,7 +694,8 @@ header {
 }
 
 
-.newsletter {
+.register-banner {
+  cursor: pointer;
   padding-left: 8%;//percentage
   display: block;
   line-height: 150px;
@@ -722,6 +736,16 @@ header {
       color: silver;
       transition: all .2s ease;
     }
+    svg {
+      margin-top: 41px;
+      margin-left: 120px;
+      height: 70px;
+      width: 70px;
+      path {
+        transition: all .2s ease;
+        fill: silver;
+      }
+    }
     &:before {
       z-index: 1;
       content: "";
@@ -735,15 +759,17 @@ header {
     }
   }
 }
-.newsletter:hover {
+.register-banner:hover {
   padding-left: 9%;
   letter-spacing: 1px;
   .mail-button {
     background: #1c3c61;
     width: 28%;
   }
-  i {
-    color: white;
+  svg {
+    path {
+      fill: white;
+    }
   }
 }
 
@@ -816,7 +842,6 @@ header {
       height: 120px;
       width: 120px;
       border-radius: 100%;
-      background-image: url(../res/ecom/faces/andy.jpg);
       background-size: cover;
       margin: auto;
       box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.06);
@@ -873,15 +898,25 @@ header {
 
 
 
+.register-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  width: 500px;
+  height: 440px;
+  background: white;
+  z-index: 1000;
+  border-radius: 2px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  padding: 20px;
+  padding-top: 40px;
+  text-align: center;
 
-
-
-
-
-
-
-
-
+}
 
 
 
