@@ -3,6 +3,7 @@ $(function() {
   
   filterList($(".iconlist"));
   
+  
   $('.parallax').parallax({
     speed: 0.4,
     bleed:20,
@@ -119,18 +120,21 @@ function awayfromFold() {
 
 
 function dropTiles() {
-  $('.tile-1').delay(1400).animate({
-    top: 30,
-    opacity: 1,
-  }, 200, function() {});
-  $('.tile-2').delay(1500).animate({
-    top: 30,
-    opacity: 1,
-  }, 200, function() {});
-  $('.tile-3').delay(1600).animate({
-    top: 30,
-    opacity: 1,
-  }, 200, function() {});
+  $('.tile-1').delay(1300).show(0).animateCss('fadeInUpSmall');
+  $('.tile-2').delay(1400).show(0).animateCss('fadeInUpSmall');
+  $('.tile-3').delay(1500).show(0).animateCss('fadeInUpSmall');
+//  $('.tile-1').delay(1400).animate({
+//    top: 30,
+//    opacity: 1,
+//  }, 200, function() {});
+//  $('.tile-2').delay(1500).animate({
+//    top: 30,
+//    opacity: 1,
+//  }, 200, function() {});
+//  $('.tile-3').delay(1600).animate({
+//    top: 30,
+//    opacity: 1,
+//  }, 200, function() {});
   
 }
 
@@ -159,3 +163,18 @@ function filterList(list) {
 jQuery.expr[':'].Contains = function(a,i,m){
   return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
 };
+
+
+function getTimeStamp() {
+  return + new Date();
+}
+
+//extende jquery for animate.css
+$.fn.extend({
+  animateCss: function (animationName) {
+    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    this.addClass('animated ' + animationName).one(animationEnd, function() {
+      $(this).removeClass('animated ' + animationName);
+    });
+  }
+});
