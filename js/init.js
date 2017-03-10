@@ -123,19 +123,6 @@ function dropTiles() {
   $('.tile-1').delay(1300).show(0).animateCss('fadeInUpSmall');
   $('.tile-2').delay(1400).show(0).animateCss('fadeInUpSmall');
   $('.tile-3').delay(1500).show(0).animateCss('fadeInUpSmall');
-//  $('.tile-1').delay(1400).animate({
-//    top: 30,
-//    opacity: 1,
-//  }, 200, function() {});
-//  $('.tile-2').delay(1500).animate({
-//    top: 30,
-//    opacity: 1,
-//  }, 200, function() {});
-//  $('.tile-3').delay(1600).animate({
-//    top: 30,
-//    opacity: 1,
-//  }, 200, function() {});
-  
 }
 
 
